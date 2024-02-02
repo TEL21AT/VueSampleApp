@@ -48,6 +48,6 @@ function removeTodo(todo) {
     </li>
   </ul>
   <button @click="hideCompletedItems">
-  {{ hideCompleted ? "Hide Completed Tasks" : "Show Completed Tasks" }}
+  {{ !hideCompleted ? "Hide Completed Tasks" : "Show Completed Tasks" }}
   </button>
 </template>
