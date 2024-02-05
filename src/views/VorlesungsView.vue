@@ -9,8 +9,15 @@ import PropsAndEvents from '@/components/PropsAndEvents.vue'
 import ProvideInject from '@/components/ProvideInject.vue'
 import StoreUsage from '@/components/StoreUsage.vue'
 import { provide } from 'vue'
+import { reactive } from 'vue'
+const messageObject = reactive({
+  message: 'Hello World!',
+  changeMessage: (value) => {
+    messageObject.message = value
+  }
+});
 
-provide('message', 'hello!')
+provide('message', messageObject)
 </script>
 
 <template>

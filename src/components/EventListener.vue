@@ -9,5 +9,5 @@ function increment() {
 </script>
 
 <template>
-  <button @click="increment">count is: {{ count }}</button>
+  <button v-on:click="increment">count is: {{ count }}</button>
 </template>
