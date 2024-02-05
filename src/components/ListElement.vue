@@ -31,7 +31,9 @@ function hideCompletedItems() {
 }
 
 function removeTodo(todo) {
-  // ...
+  todos.value = todos.value.filter(function( obj ) {
+    return obj.id !== todo.id;
+  });
 }
 </script>
 

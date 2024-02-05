@@ -1,40 +1,77 @@
 <script setup>
-import DynamicComp from '@/components/DynamicComp.vue';
-import AttributeBinding from '@/components/AttributeBinding.vue';
-import EventListener from '@/components/EventListener.vue';
-import FormBindung from '@/components/FormBindung.vue';
-import VIF from '@/components/VIF.vue';
-import ListElement from '@/components/ListElement.vue';
+import DynamicComp from '@/components/DynamicComp.vue'
+import AttributeBinding from '@/components/AttributeBinding.vue'
+import EventListener from '@/components/EventListener.vue'
+import FormBindung from '@/components/FormBindung.vue'
+import VIF from '@/components/VIF.vue'
+import ListElement from '@/components/ListElement.vue'
+import PropsAndEvents from '@/components/PropsAndEvents.vue'
+import ProvideInject from '@/components/ProvideInject.vue'
+import StoreUsage from '@/components/StoreUsage.vue'
+import { provide } from 'vue'
+
+provide('message', 'hello!')
 </script>
+
 <template>
   <div class="about">
     <h1>Vorlesungsinhalt</h1>
-    <h2>Dynmic vue:</h2>
+
+    <h2 class="custom-header">Dynamic vue:</h2>
     <DynamicComp />
+    <hr />
 
-    <h2>Attribute Binding:</h2>
+    <h2 class="custom-header">Attribute Binding:</h2>
     <AttributeBinding />
-
-    <h2>Event Listener</h2>
+    <hr />
+    <h2 class="custom-header">Event Listener</h2>
     <EventListener />
-
-    <h2>Formbinding</h2>
+    <hr />
+    <h2 class="custom-header">Formbinding</h2>
     <FormBindung />
-
-    <h2>V-IF</h2>
+    <hr />
+    <h2 class="custom-header">V-IF</h2>
     <VIF />
-
-    <h2>Listen in Vue</h2>
+    <hr />
+    <h2 class="custom-header">Listen in Vue</h2>
     <ListElement />
+    <hr />
+    <h2 class="custom-header">Props & Events Demo:</h2>
+    <PropsAndEvents
+      exampleProp="This is a prop!"
+      @exampleEvent="
+        (arg) => {
+          console.log(arg + ' received!')
+        }
+      "
+    />
+    <hr />
+    <h2 class="custom-header">Provide & Inject Demo:</h2>
+    <ProvideInject />
+    <hr />
+    <h2 class="custom-header">Pinia Store</h2>
+    <StoreUsage />
+    <hr />
   </div>
 </template>
 
 <style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
+.about {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+hr {
+  width: 50%;
+  margin: 20px;
+}
+.custom-header {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-decoration: underline;
 }
 </style>
