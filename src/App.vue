@@ -17,7 +17,7 @@ import HelloWorld from './components/HelloWorld.vue'
       </nav>
     </div>
   </header>
-
+  <p>https://discord.gg/rxx6DMBUHv</p>
   <RouterView />
 </template>
 
